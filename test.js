@@ -1,10 +1,10 @@
-var mymap = L.map('mapid', {
+		var mymap = L.map('mapid', {
 			center: [-43.30063, -65.09897],
     		zoom: 13,
     		tap: true
 		});
 
-	    // Using the AntPath
+	    // ruta
 	    var antPolyline = new L.Polyline.AntPath(
 		    	[
 		    		[-43.30441, -65.10408], 
@@ -39,7 +39,7 @@ var mymap = L.map('mapid', {
 		});
 
 
-
+		/*
 	    function onLocationFound(e) {
 			L.circle(e.latlng, {radius: 200}).addTo(mymap);
 	    }
@@ -48,8 +48,17 @@ var mymap = L.map('mapid', {
 	        alert(e.message);
 	    }
 
-		//function locate() {
+		
+		function locate() {
 	    	mymap.locate({setView: true, maxZoom: 14});
-	    //}
-
+	    }
+	    */
 	    //setInterval(locate, 3000);
+	    
+	    //        Limite
+	    var southWest = L.latLng(-43.34515, -65.17365),
+		    northEast = L.latLng(-43.26896, -65.0219),
+		    bounds = L.latLngBounds(southWest, northEast);
+
+		mymap.setMaxBounds(bounds); 
+		
