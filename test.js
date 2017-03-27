@@ -30,8 +30,13 @@
 				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
 			id: 'mapbox.streets'
 		}).addTo(mymap);
-		var marker = L.marker([-43.30063, -65.09897]).addTo(mymap);
-		marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+
+		//marcadores 
+		var marker = L.marker([-43.30441, -65.10408]).addTo(mymap);
+		marker.bindPopup("<b>A</b>").openPopup();
+		var marker = L.marker([-43.30213, -65.10112]).addTo(mymap);
+		marker.bindPopup("<b>B</b>").openPopup();
+
 		mymap.on('click', function(ev) {
 		    alert(ev.latlng); // ev is an event object (MouseEvent in this case)
 		    var marker = L.marker(ev.latlng).addTo(mymap);
@@ -61,4 +66,7 @@
 		    bounds = L.latLngBounds(southWest, northEast);
 
 		mymap.setMaxBounds(bounds); 
+
+		//distancia en metros 
+		alert( "Distancia de A a B " + Math.trunc(L.latLng([-43.30441, -65.10408]).distanceTo([-43.30213, -65.10112])) + "Metros");
 		
